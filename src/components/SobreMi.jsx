@@ -20,70 +20,74 @@ function SobreMi() {
   ];
 
   return (
-    // Use background from body (bg-gray-50)
-    <section id="sobre-mi" className="bg-transparent">
+    <section id="sobre-mi" className="bg-[#181A20] py-20 font-mono border-b-2 border-[#39FF14]">
       <div className="max-w-5xl mx-auto space-y-16">
 
-        {/* About Me Text with Animation */}
-        <div className="md:flex md:items-start md:gap-12">
-           <div className="md:w-2/3 space-y-4 animate-fadeInLeft"> {/* Added animation */}
-            <h2 className="text-3xl font-bold text-indigo-700 mb-4 inline-block border-b-4 border-indigo-300 pb-1">
-              Sobre mí
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Soy estudiante en la carrera de Redes en EducacionIT y de Data Science en Coderhouse. Considero que mi creatividad se manifiesta en la resolución de problemas y la exploración de soluciones innovadoras para abordar desafíos tecnológicos.
+        {/* About Me Text */}
+        <div className="flex flex-col md:flex-row md:items-start md:gap-12">
+          <div className="w-full md:w-2/3 space-y-4 bg-[#23272e] border border-[#39FF14] rounded-lg p-8 shadow-[0_0_12px_#39FF1440]">
+            <div className="text-[#00ffe7] text-sm mb-2 select-none">
+              <Typewriter
+                texts={["$ whoami"]}
+                speed={70}
+                eraseSpeed={20}
+                delay={900}
+                className="font-mono"
+                cursorClass="text-[#39FF14]"
+              />
+            </div>
+            <h2 className="text-2xl font-bold text-[#39FF14] mb-3">Sobre mí</h2>
+            <p className="text-base text-[#baffc9] leading-relaxed">
+              Profesional especializada en ciberseguridad defensiva y data science, con experiencia en protección de infraestructuras críticas, detección y respuesta ante amenazas, y optimización de la seguridad de la información. Apasionada por la mejora continua, la automatización y el aprendizaje de nuevas tecnologías.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Mi principal objetivo es adentrarme en el campo laboral, donde pueda aplicar y fortalecer mis habilidades en seguridad informática en datos y/o redes. Busco mi primer empleo en un entorno que me brinde la oportunidad de crecer y evolucionar como profesional, mientras trabajo de manera proactiva para alcanzar nuevos logros en el mundo de la tecnología.
+            <p className="text-base text-[#baffc9] leading-relaxed">
+              Mi objetivo es aportar valor en equipos donde la ciberseguridad y el análisis de datos sean pilares estratégicos, anticipando riesgos y garantizando la resiliencia operativa.
             </p>
           </div>
-          {/* Optional: Add an illustrative image that animates */}
-           <div className="md:w-1/3 mt-10 md:mt-0 flex justify-center animate-fadeInRight animation-delay-200">
-             {/* Example: You could put a relevant illustration here */}
-             <img src="/placeholder-illustration.svg" alt="Coding illustration" className="w-56 h-auto opacity-70" onError={(e) => e.target.style.display='none'}/>
-           </div>
         </div>
 
 
         {/* Aptitudes with Animation */}
-        <div id="aptitudes" className="space-y-6 scroll-mt-20 pt-8"> {/* scroll-mt for anchor offset */}
-          <h2 className="text-3xl font-bold text-indigo-700 text-center animate-fadeInUp">Aptitudes</h2>
-          <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto animate-fadeInUp animation-delay-100">
-             Estas son algunas de las tecnologías con las que tengo experiencia y sigo aprendiendo.
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-8 md:gap-x-10 pt-6">
-            {skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className="text-center group transition-transform duration-300 ease-in-out hover:-translate-y-2 animate-fadeInUp"
-                style={{ animationDelay: `${150 + index * 100}ms` }} // Staggered animation delay
-              >
-                <img
-                  src={skill.src}
-                  className="w-16 h-16 md:w-20 md:h-20 object-contain mx-auto mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
-                  alt={skill.name}
-                  loading="lazy"
-                  width="80" // Provide intrinsic size hints
-                  height="80"
-                />
-                <p className="text-sm font-medium text-gray-600 group-hover:text-indigo-700">{skill.name}</p>
-              </div>
-            ))}
+        <div id="aptitudes" className="space-y-6 scroll-mt-20 pt-8">
+          <div className="bg-[#23272e] border border-[#39FF14] rounded-lg p-8 shadow-[0_0_12px_#39FF1440]">
+            <h2 className="text-2xl font-bold text-[#39FF14] text-center mb-4">Aptitudes</h2>
+            <p className="text-base text-[#baffc9] text-center max-w-2xl mx-auto mb-6">
+              Tecnologías y lenguajes con los que tengo experiencia y sigo aprendiendo:
+            </p>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-8 md:gap-x-10 pt-2">
+              {skills.map((skill, index) => (
+                <div
+                  key={skill.name}
+                  className="text-center group transition-transform duration-300 ease-in-out hover:-translate-y-2"
+                  style={{ animationDelay: `${150 + index * 100}ms` }}
+                >
+                  <img
+                    src={skill.src}
+                    className="w-14 h-14 md:w-16 md:h-16 object-contain mx-auto mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
+                    alt={skill.name}
+                    loading="lazy"
+                    width="64"
+                    height="64"
+                  />
+                  <p className="text-xs font-medium text-[#00ffe7]">{skill.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Cursos Realizados with Animation */}
-        <div className="space-y-5 bg-white p-8 rounded-lg shadow-lg border border-gray-200 animate-fadeInUp animation-delay-300">
-          <h2 className="text-2xl font-bold text-indigo-700 flex items-center gap-2.5">
-            <BookOpen className="text-indigo-500" size={24} strokeWidth={2}/>
+        {/* Cursos Realizados */}
+        <div className="bg-[#23272e] border border-[#39FF14] rounded-lg p-8 shadow-[0_0_12px_#39FF1440] space-y-5">
+          <h2 className="text-2xl font-bold text-[#39FF14] flex items-center gap-2.5 mb-4">
+            <BookOpen className="text-[#00ffe7]" size={22} strokeWidth={2}/>
             Cursos Realizados
           </h2>
           <ul className="list-none space-y-3 pl-1">
             {courses.map((curso, index) => (
-               <li key={index} className="flex items-start text-lg text-gray-700">
-                 <CheckCircle2 className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" strokeWidth={2.5}/>
-                 {curso}
-               </li>
+              <li key={index} className="flex items-start text-base text-[#baffc9]">
+                <CheckCircle2 className="h-5 w-5 text-[#00ffe7] mr-3 mt-1 flex-shrink-0" strokeWidth={2}/>
+                {curso}
+              </li>
             ))}
           </ul>
         </div>

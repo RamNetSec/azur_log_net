@@ -1,6 +1,7 @@
 // src/components/Hero.jsx
 import { useEffect, useState } from 'react';
 import { ArrowDown, Briefcase, MessageSquare } from 'lucide-react'; // Import icons
+import Typewriter from './Typewriter';
 
 function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,7 +29,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen relative flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-800 via-indigo-700 to-purple-800 text-white"
+      className="min-h-screen relative flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-[#181A20] text-[#39FF14] border-b-4 border-[#39FF14] shadow-[0_0_32px_#39FF14aa]"
     >
       {/* Background pattern removed for cleaner look, uncomment if desired */}
       {/* <div className="absolute inset-0 z-0 opacity-10 bg-[url('...')]"></div> */}
@@ -38,25 +39,41 @@ function Hero() {
         {/* Text content with animations */}
         <div className={textContainerClasses}>
           {/* Added a subtitle/role */}
-           <span className="inline-block bg-white/10 text-indigo-100 text-sm font-medium px-3 py-1 rounded-full mb-4">
+           <span className="inline-block bg-[#23272e] text-[#00ffe7] text-sm font-semibold px-4 py-1 rounded-full mb-4 animate-terminal-glow animate-flicker shadow-lg border border-[#00ffe7]">
              Estudiante de Redes y Data Science
            </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
-            ¡Hola! Soy <span className="text-indigo-300">Azul Ferreyra</span> 😃
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight text-[#39FF14]">
+            Azul Ferreyra (Anzur)
           </h1>
-          <p className="text-lg sm:text-xl text-indigo-100 mb-8 max-w-lg mx-auto md:mx-0">
-            Explorando el mundo de la tecnología, aprendiendo y buscando oportunidades para crecer y contribuir. Lista para nuevos desafíos.
+          <h2 className="text-lg sm:text-xl font-medium mb-4 text-[#00ffe7] min-h-[2.5em]">
+            <Typewriter
+              texts={[
+                "SOC Analyst",
+                "Ciberseguridad Defensiva",
+                "Threat Detection & Response",
+                "Splunk",
+                "Blue Team Enthusiast"
+              ]}
+              speed={55}
+              eraseSpeed={25}
+              delay={1100}
+              className="font-mono"
+              cursorClass="text-[#39FF14]"
+            />
+          </h2>
+          <p className="text-base sm:text-lg text-[#baffc9] mb-8 max-w-xl mx-auto md:mx-0">
+            Profesional especializada en ciberseguridad defensiva, con sólida experiencia en la protección y optimización de infraestructuras críticas. Mi enfoque es anticipar y neutralizar amenazas, garantizando la continuidad del negocio y la resiliencia operativa. Comprometida con la mejora continua y la seguridad como pilar fundamental para el éxito organizacional.
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <button
               onClick={() => scrollToSection('proyectos')}
-              className="flex items-center gap-2 px-6 py-3 bg-white text-indigo-700 font-semibold rounded-md shadow-md hover:shadow-lg hover:bg-indigo-50 transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+              className="flex items-center gap-2 px-6 py-3 bg-[#181A20] text-[#39FF14] font-semibold rounded-md border-2 border-[#39FF14] shadow-lg hover:bg-[#23272e] hover:text-[#00ffe7] hover:border-[#00ffe7] transition-all duration-300 ease-in-out transform hover:-translate-y-1 animate-flicker"
             >
               <Briefcase size={18} /> Ver proyectos
             </button>
             <button
               onClick={() => scrollToSection('contacto')}
-              className="flex items-center gap-2 px-6 py-3 bg-transparent text-white font-medium rounded-md border-2 border-white hover:bg-white/20 transition-all duration-300 ease-in-out"
+              className="flex items-center gap-2 px-6 py-3 bg-transparent text-[#00ffe7] font-medium rounded-md border-2 border-[#00ffe7] hover:bg-[#23272e] hover:text-[#39FF14] hover:border-[#39FF14] transition-all duration-300 ease-in-out animate-flicker"
             >
                <MessageSquare size={18} /> Contactar
             </button>
@@ -68,12 +85,12 @@ function Hero() {
            <div className="relative group">
              <div className="absolute -inset-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full blur-lg opacity-60 group-hover:opacity-80 transition duration-1000 group-hover:duration-300 animate-tilt"></div>
              <img
-               src="https://avatars.githubusercontent.com/u/138906084?v=4" // Use a slightly larger size if available from source ?s=280
+               src="https://media.discordapp.net/attachments/1359956417636860098/1360683496305332415/WhatsApp_Image_2025-02-05_at_11.09.30-Photoroom.png?ex=67fc02c1&is=67fab141&hm=d277cc6923312a689ede58fc033f7075b796003dc79243acff81b268cd3e7a30&=&format=webp&quality=lossless&width=800&height=800"
                alt="Azul Ferreyra"
                className="relative w-48 h-48 md:w-60 md:h-60 lg:w-64 lg:h-64 rounded-full object-cover border-4 border-white shadow-xl"
-               width="256" // Helps browser reserve space
+               width="256"
                height="256"
-               loading="eager" // Load hero image immediately
+               loading="eager"
             />
            </div>
          </div>

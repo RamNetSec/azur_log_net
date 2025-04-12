@@ -26,15 +26,15 @@ function Navbar() {
   };
 
   const navLinkBase = `px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center gap-1.5`;
-  const navLinkScrolled = `text-slate-700 hover:text-indigo-600 hover:bg-indigo-50`;
-  const navLinkTop = `text-white hover:text-indigo-200 hover:bg-white/10`; // Adjusted hover for top state
+  const navLinkScrolled = `text-[#39FF14] hover:text-[#00ffe7] hover:bg-[#23272e] animate-terminal-glow`;
+  const navLinkTop = `text-[#00ffe7] hover:text-[#39FF14] hover:bg-[#23272e] animate-terminal-glow`; // Terminal neón
 
-  const contactButtonBase = `ml-4 px-5 py-2 rounded-md text-sm font-semibold transition-all duration-300 shadow-sm flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2`; // Added focus styles,semibold
-  const contactButtonScrolled = `bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-white`;
-  const contactButtonTop = `bg-white text-indigo-600 hover:bg-indigo-100 focus:ring-indigo-500 focus:ring-offset-indigo-800`; // Adjusted offset color
+  const contactButtonBase = `ml-4 px-5 py-2 rounded-md text-sm font-semibold transition-all duration-300 shadow-sm flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 animate-flicker`;
+  const contactButtonScrolled = `bg-[#181A20] text-[#39FF14] border-2 border-[#39FF14] hover:bg-[#23272e] hover:text-[#00ffe7] hover:border-[#00ffe7] focus:ring-[#39FF14] focus:ring-offset-[#181A20]`;
+  const contactButtonTop = `bg-[#23272e] text-[#00ffe7] border-2 border-[#00ffe7] hover:bg-[#181A20] hover:text-[#39FF14] hover:border-[#39FF14] focus:ring-[#00ffe7] focus:ring-offset-[#23272e]`;
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${scrolled ? 'bg-white shadow-lg py-2.5' : 'bg-transparent py-4'}`}> {/* Added shadow-lg */}
+    <nav className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${scrolled ? 'bg-[#181A20] border-b-2 border-[#39FF14] shadow-[0_0_24px_#39FF14aa] py-2.5' : 'bg-[#181A20]/80 border-b-2 border-[#00ffe7] shadow-[0_0_16px_#00ffe7aa] py-4'}`}> {/* Terminal neón */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex justify-between items-center ${scrolled ? 'h-12' : 'h-16'} transition-height duration-300`}> {/* Smooth height transition */}
           {/* Logo/Name */}
