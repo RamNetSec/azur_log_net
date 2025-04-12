@@ -31,8 +31,44 @@ function Hero() {
       id="hero"
       className="min-h-screen relative flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-[#181A20] text-[#39FF14] border-b-4 border-[#39FF14] shadow-[0_0_32px_#39FF14aa]"
     >
-      {/* Background pattern removed for cleaner look, uncomment if desired */}
-      {/* <div className="absolute inset-0 z-0 opacity-10 bg-[url('...')]"></div> */}
+      {/* Fondo minimalista con líneas flotantes */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 1440 900"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute inset-0 w-full h-full"
+          style={{ minHeight: "100vh" }}
+        >
+          {/* Líneas diagonales */}
+          <g className="animate-[floatLines_18s_linear_infinite]">
+            <line x1="0" y1="0" x2="1440" y2="900" stroke="#00ffe7" strokeWidth="1.2" opacity="0.08" />
+            <line x1="0" y1="900" x2="1440" y2="0" stroke="#39FF14" strokeWidth="1.2" opacity="0.08" />
+            <line x1="0" y1="300" x2="1440" y2="1200" stroke="#00ffe7" strokeWidth="1.2" opacity="0.06" />
+            <line x1="0" y1="600" x2="1440" y2="1500" stroke="#39FF14" strokeWidth="1.2" opacity="0.06" />
+            <line x1="360" y1="0" x2="1800" y2="900" stroke="#00ffe7" strokeWidth="1.2" opacity="0.05" />
+            <line x1="1080" y1="0" x2="2520" y2="900" stroke="#39FF14" strokeWidth="1.2" opacity="0.05" />
+          </g>
+          {/* Líneas verticales */}
+          <g className="animate-[floatLines2_22s_linear_infinite]">
+            <line x1="240" y1="0" x2="240" y2="900" stroke="#00ffe7" strokeWidth="1" opacity="0.07" />
+            <line x1="720" y1="0" x2="720" y2="900" stroke="#39FF14" strokeWidth="1" opacity="0.07" />
+            <line x1="1200" y1="0" x2="1200" y2="900" stroke="#00ffe7" strokeWidth="1" opacity="0.07" />
+          </g>
+        </svg>
+      </div>
+      <style>{`
+        @keyframes floatLines {
+          0% { transform: translateY(0px);}
+          100% { transform: translateY(-30px);}
+        }
+        @keyframes floatLines2 {
+          0% { transform: translateY(0px);}
+          100% { transform: translateY(40px);}
+        }
+      `}</style>
 
       <div className="max-w-7xl mx-auto w-full z-10 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
 
@@ -40,7 +76,7 @@ function Hero() {
         <div className={textContainerClasses}>
           {/* Added a subtitle/role */}
            <span className="inline-block bg-[#23272e] text-[#00ffe7] text-sm font-semibold px-4 py-1 rounded-full mb-4 animate-terminal-glow animate-flicker shadow-lg border border-[#00ffe7]">
-             Estudiante de Redes y Data Science
+             Analista SOC Ciberseguridad
            </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight text-[#39FF14]">
             Azul Ferreyra (Anzur)
