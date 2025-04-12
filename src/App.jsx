@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SobreMi from './components/SobreMi';
 import Proyectos from './components/Proyectos';
-import Certificaciones from './components/Certificaciones';
+import GaleriaCertificados from './components/GaleriaCertificados';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Hero />
         <SobreMi />
         <Proyectos />
-        <Certificaciones />
+        <GaleriaCertificados />
       </main>
       <Footer />
     </>

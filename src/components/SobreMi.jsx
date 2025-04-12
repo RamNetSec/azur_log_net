@@ -1,18 +1,16 @@
 // src/components/SobreMi.jsx
 import { BookOpen, CheckCircle2 } from 'lucide-react'; // Import icons
 import Typewriter from './Typewriter';
-import CertCarousel from './CertCarousel';
 
 function SobreMi() {
-  // Skill images can remain as they are specific logos
-  // Consider finding SVG versions for better quality if possible
+  // Aptitudes con nivel (0-100)
   const skills = [
-    { name: 'HTML5', src: 'https://cdn-icons-png.flaticon.com/128/919/919827.png' },
-    { name: '.NET', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/.NET_Logo.svg/456px-.NET_Logo.svg.png' },
-    { name: 'SQL Server', src: 'https://img.icons8.com/color/480/microsoft-sql-server.png' },
-    { name: 'CSS3', src: 'https://cdn-icons-png.flaticon.com/128/919/919826.png' },
-    { name: 'JavaScript', src: 'https://cdn-icons-png.flaticon.com/128/888/888874.png' },
-    { name: 'Python', src: 'https://cdn-icons-png.flaticon.com/128/906/906342.png' },
+    { name: 'HTML5', level: 90 },
+    { name: 'CSS3', level: 85 },
+    { name: 'JavaScript', level: 80 },
+    { name: 'Python', level: 75 },
+    { name: '.NET', level: 70 },
+    { name: 'SQL Server', level: 65 },
   ];
 
   const courses = [
@@ -72,22 +70,19 @@ function SobreMi() {
             <p className="text-base text-[#baffc9] text-center max-w-2xl mx-auto mb-6">
               Tecnologías y lenguajes con los que tengo experiencia y sigo aprendiendo:
             </p>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-8 md:gap-x-10 pt-2">
+            <div className="flex flex-col gap-5 max-w-lg mx-auto pt-2">
               {skills.map((skill, index) => (
-                <div
-                  key={skill.name}
-                  className="text-center group transition-transform duration-300 ease-in-out hover:-translate-y-2"
-                  style={{ animationDelay: `${150 + index * 100}ms` }}
-                >
-                  <img
-                    src={skill.src}
-                    className="w-14 h-14 md:w-16 md:h-16 object-contain mx-auto mb-2 grayscale group-hover:grayscale-0 transition-all duration-300"
-                    alt={skill.name}
-                    loading="lazy"
-                    width="64"
-                    height="64"
-                  />
-                  <p className="text-xs font-medium text-[#00ffe7]">{skill.name}</p>
+                <div key={skill.name} className="w-full">
+                  <div className="flex justify-between mb-1">
+                    <span className="text-[#00ffe7] font-mono text-sm">{skill.name}</span>
+                    <span className="text-[#baffc9] font-mono text-xs">{skill.level}%</span>
+                  </div>
+                  <div className="w-full h-4 bg-[#181A20] rounded-full border border-[#00ffe7] overflow-hidden shadow-[0_0_8px_#00ffe755]">
+                    <div
+                      className="h-full bg-gradient-to-r from-[#39FF14] to-[#00ffe7] transition-all duration-700"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -111,7 +106,6 @@ function SobreMi() {
         </div>
 
         {/* Carrusel de Certificados */}
-        <CertCarousel images={certImages} />
 
       </div>
     </section>
