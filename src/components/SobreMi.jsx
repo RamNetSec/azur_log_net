@@ -1,5 +1,6 @@
 // src/components/SobreMi.jsx
 import { BookOpen, CheckCircle2 } from 'lucide-react'; // Import icons
+import Typewriter from './Typewriter';
 
 function SobreMi() {
   // Skill images can remain as they are specific logos
